@@ -1,14 +1,3 @@
----
-title:  Teaser Dragon CTF
-date:  2018-09-30
-tags:
-  - C
-categories:
-  - Writeups
-excerpt: "production only"
----
-
-
 # Pwn
 
 ## Production

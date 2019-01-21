@@ -13,6 +13,13 @@ Inside [wargame folder](wargame):
 - alf.nu
 - ...
 
+# 2019
+
+[Insomni'hack teaser 2019](2019/2019-01-20-inso-hack.md) | Server sucks |
+---------| ----|
+onewrite | pwn |
+echoechoecho | pwn |
+
 # 2018
 
 [35C3 CTF](2018/2018-12-27-35C3-CTF.md) | Last CTF of 2018 |

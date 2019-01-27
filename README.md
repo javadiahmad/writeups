@@ -15,6 +15,10 @@ Inside [wargame folder](wargame):
 
 # 2019
 
+[Codegate 2019](2019/2019-01-27-codegate.md) | No Categories |
+--------| -----|
+20000 | N/A |
+
 [Insomni'hack teaser 2019](2019/2019-01-20-inso-hack.md) | Server sucks |
 ---------| ----|
 onewrite | pwn |
